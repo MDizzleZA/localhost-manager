@@ -1,0 +1,19 @@
+{
+  "discovery": {
+    "enabled": true,
+    "port_min": 3000,
+    "port_max": 9999,
+    "extra_ports": [80, 5000, 5173, 5432, 8000, 8080, 27017]
+  },
+  "apps": [
+    {
+      "name": "Example — Vite dev server",
+      "port": 5173,
+      "cwd": "C:\path\to\your\project",
+      "command": "npm run dev",
+      "url": "http://localhost:5173",
+      "console": false
+    }
+  ],
+  "scan": { "roots": [], "max_depth": 4 }
+}
