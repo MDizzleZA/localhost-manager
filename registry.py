@@ -1,11 +1,18 @@
 """Load / save / validate the app registry (apps.json)."""
 from __future__ import annotations
 
-import json
 import os
+import sys
+import json
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-CONFIG_PATH = os.path.join(HERE, 'apps.json')
+if getattr(sys, 'frozen', False):
+    # Version compilée en EXE
+    CONFIG_DIR = os.path.dirname(sys.executable)
+else:
+    # Version Python classique
+    CONFIG_DIR = os.path.dirname(os.path.abspath(__file__))
+
+CONFIG_PATH = os.path.join(CONFIG_DIR, "apps.json")
 
 DEFAULT_CONFIG = {
     'discovery': {
